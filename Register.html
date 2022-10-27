@@ -1,0 +1,193 @@
+<html>
+    <head>   
+    </head>
+<body> 
+
+<h1 class="special"> <center>REGISTRATION PAGE</center> <h1> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .box2{
+  width:700px;
+  height:450px;
+  justify-content: center;
+  align-items: center; 
+  font-size:18px;
+  color:black;  
+  background-color:whitesmoke;
+  opacity: 0.8;   
+  z-index: -1;         
+  }
+</style>
+
+
+<form>
+<center>
+<div class="box2">   
+<table >
+    
+    <tr>
+        <td>
+            <label for="title">Title : </label>
+        </td>
+        <td>
+            <select name="title" id="title">
+                <option value="1">Mr.</option>
+                <option value="2">Mrs.</option>
+                <option value="3">Ms.</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="firstName"> First name : </label>
+        </td>
+
+        <td>
+            <input type="text" id="firstName" name="firstName" placeholder="Your first name">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="lastName"> Last name : </label>
+        </td>
+
+        <td>
+            <input type="text" id="lastName" name="lastName" placeholder="Your last name">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="Date of Birth"> Date of Birth : </label> 
+        </td>
+        <td>
+            <input type="date" id="Date of Birth" name="Date of Birth" placeholder="DD-MM-YYYY">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="Gender"> Gender :</label> 
+        </td>
+        <td>
+            <label for="Male"> Male :</label> 
+        
+            <input type="radio" onclick="javascript:saveData();" id="Male" name="gender" placeholder="Male">
+        
+            <label for="Female"> Female : </label> 
+        
+            <input type="radio" onclick="javascript:saveData();" id="Female" name="gender" placeholder="Female">
+
+            <label for="Trans"> Transgender :</label> 
+        
+            <input type="radio" onclick="javascript:saveData();" id="trans" name="gender" placeholder="Male">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="address"> Address : </label>
+        </td>
+
+        <td>
+            <textarea input type="text" id="address" name="address" placeholder="Your address" rows="6" cols="20"></textarea>
+        </td>  
+    </tr>
+    
+    
+    <tr>
+        <td>
+            <label for="Mobile"> Mobile : </label> 
+        </td>
+        <td>
+            <input type="number" id="Mobile" name="Mobile" placeholder="Mobile number">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="Email"> Email : </label> 
+        </td>
+        <td>
+            <input type="text" id="Email" name="Email" placeholder="Email">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="file"> Valid id proof: </label> 
+        </td>
+        <td>
+            <input type="file" name="fileupload" accept="image/*"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="Communication Preferences:"> Communication Preference : </label> 
+        </td>
+        <td>
+
+             <input type="checkbox" id="email" name="email" value="Email">
+             <label for="email">Email</label>
+        
+
+            <input type="checkbox" id="SMS" name="SMS" value="SMS">
+            <label for="SMS">SMS</label>
+       </td>
+    </tr>
+
+    <tr>
+        <td>
+
+            <input type="checkbox" id="terms" name="terms" value="terms">
+            <label for="terms">I agree to the <span style = "color:blue">terms and conditions</span> specified</label>
+       </td>
+        
+    </tr>
+
+    <tr>
+        <td>
+            <input type="submit" onclick="javascript:saveData();" id="submit" name="submit" value="SUBMIT"/>
+        </td>
+        <td>
+            <input type="button" onclick="javascript:saveData();" id="reset" name="RESET" value="RESET"/>  
+        </td>
+    </tr>
+    
+        
+</table>
+</div>
+
+
+<br/>
+<p><a class="btn btn-lg btn-primary" href="login.html" style="background-color:green ;">Login</a></p>
+</center>
+</form>
+
+<script>
+    function saveData()
+             {  debugger
+                var firstName = document.getElementById('firstName').value;
+                var lastName = document.getElementById('lastName').value;
+                var address = document.getElementById('address').value;
+                //alert('first Name' + firstName);
+                var formData = {firstName,lastName,address}
+            console.log(formData);
+            localStorage.setItem('formData',JSON.stringify(formData));
+            return false;
+             }
+</script>
+
+</body>
+
+<style>
+    body
+    { background-image: url(https://cdn.citymapia.com/kozhikode/online-taxi-calicut/32492/Portfolio.jpg?biz=8610);
+     background-size: 100%,100%;
+     background-repeat: no-repeat;
+
+    }
+</style>
+</html>
